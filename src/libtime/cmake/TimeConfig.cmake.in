@@ -1,0 +1,12 @@
+get_filename_component(Time_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+list(APPEND CMAKE_MODULE PATH ${Time_CMAKE_DIR})
+
+find_dependency(OpenCV 3.1 REQUIRED COMPONENTS videoio)
+list(REMOVE_AT CMAKE_MODULE_PATH -1)
+
+if(NOT TARGET Time::Time)
+    include(${Time_CMAKE_DIR}/TimeTargets.cmake)
+endif()
+
+set(Time_LIBRARIES Time::Time)

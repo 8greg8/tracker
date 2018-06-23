@@ -1,0 +1,17 @@
+get_filename_component(Terminal_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+list(APPEND CMAKE_MODULE PATH ${Terminal_CMAKE_DIR})
+
+find_dependency(OpenCV 3.1 REQUIRED COMPONENTS core highgui)
+find_dependency(Boost REQUIRED COMPONENTS format)
+find_dependency(Tracker REQUIRED)
+find_dependency(Util REQUIRED)
+
+
+list(REMOVE_AT CMAKE_MODULE_PATH -1)
+
+if(NOT TARGET Terminal::Terminal)
+    include(${Terminal_CMAKE_DIR}/TerminalTargets.cmake)
+endif()
+
+set(Terminal_LIBRARIES Terminal::Terminal)

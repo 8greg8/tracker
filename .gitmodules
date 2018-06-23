@@ -1,0 +1,6 @@
+[submodule "src/3rdparty/opentld"]
+	path = src/3rdparty/opentld
+	url = https://github.com/8greg8/OpenTLD
+[submodule "src/3rdparty/ccv"]
+	path = src/3rdparty/ccv
+	url = https://github.com/8greg8/ccv

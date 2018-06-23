@@ -1,0 +1,17 @@
+get_filename_component(Util_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+list(APPEND CMAKE_MODULE PATH ${Util_CMAKE_DIR})
+
+find_dependency(OpenCV 3.1 REQUIRED COMPONENTS core highgui imgproc)
+find_dependency(Boost REQUIRED COMPONENTS filesystem)
+find_dependency(dlib REQUIRED)
+find_dependency(ccv REQUIRED)
+find_dependency(Core REQUIRED)
+
+list(REMOVE_AT CMAKE_MODULE_PATH -1)
+
+if(NOT TARGET Util::Util)
+    include(${Util_CMAKE_DIR}/UtilTargets.cmake)
+endif()
+
+set(Util_LIBRARIES Util::Util)

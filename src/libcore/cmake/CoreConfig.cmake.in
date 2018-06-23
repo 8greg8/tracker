@@ -1,0 +1,10 @@
+get_filename_component(Core_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+#get_filename_component(Core_INSTALL_PATH "${Core_INSTALL_PATH}" REALPATH)
+#message("Core install path: ${Core_INSTALL_PATH}")
+#set(Core_INCLUDE_DIRS "${Core_INSTALL_PATH}/include")
+
+if(NOT TARGET Core::Core)
+    include(${Core_CMAKE_DIR}/CoreTargets.cmake)
+endif()
+
+set(Core_LIBRARIES Core::Core)
