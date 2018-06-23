@@ -1,4 +1,4 @@
-# Flow features
+# Tracker
 
 Application for testing and using different trackers.
 
@@ -24,7 +24,7 @@ Before installing this software you need:
 * [Dlib](http://www.dlib.net/) - Dlib C++ library v19.2
 
 <aside class="notice">
-**Libccv** and **LibOpenTLD** are also required but are already included in the project. You don't have to install them.
+  **Libccv** and **LibOpenTLD** are also required but are already included in the project. You don't have to install them.
 </aside>
 
 For smoother installing and usage I recommend you to use [Anaconda environment](https://anaconda.org). When you install it you can use [conda_config.sh](conda_config.sh) to configure new `tracker` environment
